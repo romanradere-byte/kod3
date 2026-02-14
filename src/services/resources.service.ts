@@ -1,8 +1,5 @@
 import { api } from "./api";
 
-/* ============================
-   TYPES
-============================ */
 
 export interface ResourceResponseDto {
   id: number;
@@ -32,10 +29,6 @@ export interface CreateResourceDto {
   previewText?: string;
 }
 
-/* ============================
-   GET ALL (CATALOG)
-============================ */
-
 export const getResources = async (
   page: number,
   limit: number
@@ -47,9 +40,6 @@ export const getResources = async (
   return data;
 };
 
-/* ============================
-   GET ONE (BOOK PAGE)
-============================ */
 
 export const getResourceById = async (
   id: number
@@ -60,10 +50,6 @@ export const getResourceById = async (
 
   return data;
 };
-
-/* ============================
-   CREATE (ADMIN / LIBRARIAN)
-============================ */
 
 export const createResource = async (
   payload: CreateResourceDto
@@ -76,9 +62,7 @@ export const createResource = async (
   return data;
 };
 
-/* ============================
-   UPDATE
-============================ */
+
 
 export const updateResource = async (
   id: number,
@@ -92,17 +76,12 @@ export const updateResource = async (
   return data;
 };
 
-/* ============================
-   DELETE
-============================ */
+
 
 export const deleteResource = async (id: number): Promise<void> => {
   await api.delete(`/resources/${id}`);
 };
 
-/* ============================
-   DOWNLOAD FILE
-============================ */
 
 export const downloadResourceFile = async (
   id: number
