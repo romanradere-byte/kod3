@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://api.collage-library.app", // порт твого backend
+  baseURL: "https://api.collage-library.app", 
 });
 
 api.interceptors.request.use((config) => {
